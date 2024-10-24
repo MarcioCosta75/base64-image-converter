@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 to Image Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Base64 to Image Converter</h1>
+
+    <p>Enter your Base64 string below:</p>
+    <textarea id="base64Input" placeholder="Paste your Base64 string here..."></textarea>
+
+    <label for="formatSelect">Choose download format:</label>
+    <select id="formatSelect">
+        <option value="png">PNG</option>
+        <option value="jpeg">JPEG</option>
+        <option value="webp">WEBP</option>
+    </select>
+
+    <label for="scaleInput">Choose scale (e.g., 1 for original, 0.5 for half-size):</label>
+    <input type="number" id="scaleInput" placeholder="Enter scale" value="1" step="0.1" min="0.1" max="5">
+
+    <button onclick="convertBase64ToImage()">Convert to Image</button>
+
+    <h2>Result:</h2>
+    <div id="result">
+        <!-- The generated image will be displayed here -->
+    </div>
+
+    <button id="downloadButton" style="display: none;" onclick="downloadImage()">Download Image</button>
+
+    <script src="decoder.js"></script>
+
+</body>
+</html>
